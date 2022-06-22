@@ -1,16 +1,17 @@
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
 
 const ExpenseItem = (myprops) => {
-  // const {dta, ttl, amnt} = myprops
+  // const {data, title, amount} = myprops
   return (
-    <div className="expense-item">
-      <ExpenseDate dta={myprops.dta} />
+    <Card className="expense-item">
+      <ExpenseDate dataED={myprops.dataEI} />
       <div className="expense-item__description">
-        <h2>{myprops.ttl}</h2>
-        <div className="expense-item__price">{myprops.amnt}</div>
+        <h2>{myprops.titleEI}</h2>
+        <div className="expense-item__price">{myprops.amountEI}</div>
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -30,7 +30,8 @@ const ExpenseForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}> 
+    {/* we use onSubmit instead onClick in button */}
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -38,6 +39,7 @@ const ExpenseForm = () => {
             type="text"
             value={enteredTitle}
             onChange={titleChangeHandler}
+            // we also can use onImput, but onChange event - for all inputs types
           />
         </div>
         <div className="new-expense__control">
@@ -63,6 +65,7 @@ const ExpenseForm = () => {
       </div>
       <div className="new-expense__actions">
         <button type="submit">Add Expense</button>
+        {/* we don't need add onClick listener. then we have a <form> with <button type='submit'> </button>  */}
       </div>
     </form>
   );

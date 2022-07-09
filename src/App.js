@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-const expenses = [
+const DUMMY_EXPENSES = [
   {
     id: "e1",
     title: "Toilet Paper",
@@ -25,16 +25,18 @@ const expenses = [
   },
 ];
 
-const addExpenseHandler = (expense) => {
-  console.log('from app.js')
-  console.log(expense)
-};
-
 const App = () => {
+  const [renewExpenses, setRenewExpenses] = useState(DUMMY_EXPENSES);
+  const addExpenseHandler = (expense) => {
+    setRenewExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses]; //... - spread operator 
+    });
+    //clean way updating our state. prevExpenses - older snapshot of that same state
+  };
   return (
     <div>
-      <NewExpense onAddExpense = {addExpenseHandler} />
-      <Expenses item={expenses} />
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses item={renewExpenses} />
     </div>
   );
 };

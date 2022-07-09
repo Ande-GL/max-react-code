@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
@@ -16,14 +16,16 @@ const ExpenseItem = (props) => {
   };
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate dataED={props.dataEI} />
-      <div className="expense-item__description">
-        <h2>{title}</h2>
-        <div className="expense-item__price">{props.amountEI}</div>
-        <button onClick={clickHandler}>Done</button>
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate dataED={props.dataEI} />
+        <div className="expense-item__description">
+          <h2>{title}</h2>
+          <div className="expense-item__price">{props.amountEI}</div>
+          <button onClick={clickHandler}>Done</button>
+        </div>
+      </Card>
+    </li>
   );
 };
 

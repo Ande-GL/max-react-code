@@ -13,22 +13,26 @@ const NewExpense = (props) => {
     //function wich add to the object from ExpensesForm unic id, and through props send to App.js
 
     setAddNewExpenses(false);
-    //after click, form is disapear 
+    //after click, form is disapear
   };
 
-  const [addNewExpenses, setAddNewExpenses] = useState(false)
+  const [addNewExpenses, setAddNewExpenses] = useState(false);
   const addNewExpensesFun = () => {
-    setAddNewExpenses(true)
-  }
+    setAddNewExpenses(true);
+  };
 
   const stopEditingHandler = () => {
-    setAddNewExpenses(false)
-  }
-
+    setAddNewExpenses(false);
+  };
 
   return (
     <div className="new-expense">
-      {addNewExpenses && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancelButton={stopEditingHandler} />}
+      {addNewExpenses && (
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          onCancelButton={stopEditingHandler}
+        />
+      )}
       {/* if addNewExpenses is true show ExpenseForm (onCancelButton return - false)*/}
       {!addNewExpenses && <button onClick={addNewExpensesFun}>Add New</button>}
       {/* if addNewExpenses is false show Button */}

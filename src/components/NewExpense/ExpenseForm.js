@@ -27,10 +27,10 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     // create an object with our value
-    
-    props.onSaveExpenseData(expenseData)
+
+    props.onSaveExpenseData(expenseData);
     //send object through the props to the NewExpenses.js
-    
+
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
@@ -73,7 +73,10 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={props.onCancelButton}>Cancel</button>
+        <button type="button" onClick={props.onCancelButton}>
+          Cancel
+        </button>
+        {/* add button, and send onClick forward to NewExpense.js */}
         <button type="submit">Add Expense</button>
         {/* we don't need add onClick listener. then we have a <form> with <button type='submit'> </button>  */}
       </div>

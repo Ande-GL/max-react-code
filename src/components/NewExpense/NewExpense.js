@@ -29,7 +29,7 @@ const NewExpense = (props) => {
   return (
     <div className="new-expense">
       {addNewExpenses && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancelButton={stopEditingHandler} />}
-      {/* if addNewExpenses is true show ExpenseForm */}
+      {/* if addNewExpenses is true show ExpenseForm (onCancelButton return - false)*/}
       {!addNewExpenses && <button onClick={addNewExpensesFun}>Add New</button>}
       {/* if addNewExpenses is false show Button */}
     </div>
